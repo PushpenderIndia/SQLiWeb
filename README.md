@@ -1,2 +1,2 @@
-# SQL_VulnWeb
+# SQLi Web
 Website Containing Different Types of SQL Injection Vulnerabilities
