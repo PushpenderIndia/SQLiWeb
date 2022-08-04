@@ -3,9 +3,10 @@
 		<meta charset="utf-8">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
-		<title>Blacklist Extension Validation</title>
-		<!-- Header & Upload form CSS -->
-		<link rel="stylesheet" href="static/css/style.css">
+		<title>SQL Auth Bypass-4</title>
+		<!-- Header & Login form CSS -->
+		<link rel="stylesheet" href="../static/css/style.css">
+		<link rel="stylesheet" href="../static/css/login.css">
 		<link href='https://fonts.googleapis.com/css?family=Cookie' rel='stylesheet' type='text/css'>
 
 		<!-- Footer CSS -->
@@ -17,7 +18,7 @@
 	<!-- Header Start -->
 	<header class="brand-navigation">
 		<div class="content">
-		  <a href="https://www.youtube.com/channel/UCRv-wp0CWtW2J33NkTId62w"><img class="logo-nav" src="static/img/logo.png"></a>
+		  <a href="https://www.youtube.com/channel/UCRv-wp0CWtW2J33NkTId62w"><img class="logo-nav" src="../static/img/logo.png"></a>
 		  <nav>
 			<ul class="navigation">
 			  <li><a href="#">Home</a></li>
@@ -34,36 +35,33 @@
 
 	<!-- Tip tool Start -->
 	<div class="tiptool">
-		<span class="tool" data-tip="Is it possible that Developer might have missed to Blacklist certain Valid Extensions ?" tabindex="1"><b>💡 Hint </b></span>
+		<span class="tool" data-tip="It is necessary that .png/.jpg/.gif should be at the end of file ?" tabindex="1"><b>💡 Hint </b></span>
 	</div>
-	<!-- Tip tool End -->
+	<!-- Tip tool End -->	
 
-	<!-- Upload Form Start -->
-	<div class="container">
-		<div class="card">
-		  <h3>Upload Files</h3>
-		  <div class="drop_box">
-			<header>
-			  <h4>Select File here</h4>
-			</header>
-			<p id="uploadText">Files Supported: JPG, JPEG, PNG, GIF</p>
-			<form action="php/upload3.php" method="post" enctype="multipart/form-data">
-				<div class="form">
-				<h4 id="filenameText" class="invisible"></h4>
-				<input type="file" name="file" hidden accept=".jpg,.jpeg,.png,.gif" id="fileID" style="display:none;">
-				<button class="btn" type="button" id="choosefilebtn">Choose File</button>
-				<button class="btn invisible" type="submit" name="submit" name="Upload" id="submitButton">Upload</button>
-				</div>
-			</form>
-		  </div>
-	  
+	<!-- Login Form Start -->
+	<div class="login-page">
+		<div class="form">
+		  <form class="register-form">
+			<input type="text" placeholder="name"/>
+			<input type="password" placeholder="password"/>
+			<input type="text" placeholder="email address"/>
+			<button>create</button>
+			<p class="message">Already registered? <a href="#">Sign In</a></p>
+		  </form>
+		  <form class="login-form">
+			<input type="text" placeholder="username"/>
+			<input type="password" placeholder="password"/>
+			<button>login</button>
+			<p class="message">Not registered? <a href="#">Create an account</a></p>
+		  </form>
 		</div>
 	</div>
-	<!-- Upload Form End -->
+	<!-- Login Form End -->
 	
 	<!-- JS for Header Start -->
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
-	<script src="static/js/script.js"></script>
+	<script src="../static/js/script.js"></script>
 	<script>
 		$(document).ready(function(){
 			var showHeaderAt = 150;
@@ -89,8 +87,8 @@
 		<h1>Challenges</h1>
 		<div class="row">
 			<div class="col">
-				<div class="card card-danger" onclick="location.href = 'index.html';" >
-					<p class="card-title">No Restriction</p>
+				<div class="card card-danger" onclick="location.href = '../index.php';" >
+					<p class="card-title">SQL Auth Bypass-1</p>
 					<div class="card-data">
 						<div class="difficulty card-sub">
 							<i class="fas fa-bolt"></i>
@@ -101,8 +99,8 @@
 			</div>
 
 			<div class="col">
-				<div class="card card-danger" onclick="location.href = 'challenge2.html';" >
-					<p class="card-title">Content Type</p>
+				<div class="card card-danger" onclick="location.href = 'challenge2.php';" >
+					<p class="card-title">SQL Auth Bypass-2</p>
 					<div class="card-data">
 						<div class="difficulty card-sub">
 							<i class="fas fa-bolt"></i>
@@ -113,40 +111,40 @@
 			</div>	
 
 			<div class="col">
-				<div class="card card-danger" onclick="location.href = 'challenge3.html';" >
-					<p class="card-title">Blacklist EXT Validation</p>
+				<div class="card card-danger" onclick="location.href = 'challenge3.php';" >
+					<p class="card-title">SQL Auth Bypass-3</p>
 					<div class="card-data">
 						<div class="difficulty card-sub">
 							<i class="fas fa-bolt"></i>
-							<p class="data">Medium</p>
+							<p class="data">Easy</p>
 						</div>
 					</div>
 				</div>
 			</div>
 			
 			<div class="col">
-				<div class="card card-danger" onclick="location.href = 'challenge4.html';" >
-					<p class="card-title">Whitelist EXT Validation - 1</p>
+				<div class="card card-danger" onclick="location.href = 'challenge4.php';" >
+					<p class="card-title">SQL Auth Bypass-4</p>
 					<div class="card-data">
 						<div class="difficulty card-sub">
 							<i class="fas fa-bolt"></i>
-							<p class="data">Medium</p>
+							<p class="data">Easy</p>
 						</div>
 					</div>
 				</div>
 			</div>	
 			
 			<div class="col">
-				<div class="card card-danger" onclick="location.href = 'challenge5.html';" >
-					<p class="card-title">Whitelist EXT Validation - 2</p>
+				<div class="card card-danger" onclick="location.href = 'challenge5.php';" >
+					<p class="card-title">SQL Auth Bypass-5</p>
 					<div class="card-data">
 						<div class="difficulty card-sub">
 							<i class="fas fa-bolt"></i>
-							<p class="data">Medium</p>
+							<p class="data">Easy</p>
 						</div>
 					</div>
 				</div>
-			</div>		
+			</div>			
 		</div>
 	</div>
 	<!-- Choose Challenge End -->

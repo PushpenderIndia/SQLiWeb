@@ -3,9 +3,10 @@
 		<meta charset="utf-8">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
-		<title>Content Type Validation</title>
-		<!-- Header & Upload form CSS -->
+		<title>SQL Auth Bypass-1</title>
+		<!-- Header & Login form CSS -->
 		<link rel="stylesheet" href="static/css/style.css">
+		<link rel="stylesheet" href="static/css/login.css">
 		<link href='https://fonts.googleapis.com/css?family=Cookie' rel='stylesheet' type='text/css'>
 
 		<!-- Footer CSS -->
@@ -34,32 +35,29 @@
 
 	<!-- Tip tool Start -->
 	<div class="tiptool">
-		<span class="tool" data-tip="Content-Type HTTP Header can be tampered ; )" tabindex="1"><b>💡 Hint </b></span>
+		<span class="tool" data-tip="Can You Bypass This Login Page. Hint: SQL Auth Bypass" tabindex="1"><b>💡 Hint </b></span>
 	</div>
-	<!-- Tip tool End -->	
+	<!-- Tip tool End -->
 
-	<!-- Upload Form Start -->
-	<div class="container">
-		<div class="card">
-		  <h3>Upload Files</h3>
-		  <div class="drop_box">
-			<header>
-			  <h4>Select File here</h4>
-			</header>
-			<p id="uploadText">Files Supported: JPG, JPEG, PNG, GIF</p>
-			<form action="php/upload2.php" method="post" enctype="multipart/form-data">
-				<div class="form">
-				<h4 id="filenameText" class="invisible"></h4>
-				<input type="file" name="file" hidden accept=".jpg,.jpeg,.png,.gif" id="fileID" style="display:none;">
-				<button class="btn" type="button" id="choosefilebtn">Choose File</button>
-				<button class="btn invisible" type="submit" name="submit" name="Upload" id="submitButton">Upload</button>
-				</div>
-			</form>
-		  </div>
-	  
+	<!-- Login Form Start -->
+	<div class="login-page">
+		<div class="form">
+		  <form class="register-form">
+			<input type="text" placeholder="name" name="username" />
+			<input type="password" placeholder="password" name="password" />
+			<input type="text" placeholder="email address" name="email_address" />
+			<button>create</button>
+			<p class="message">Already registered? <a href="#">Sign In</a></p>
+		  </form>
+		  <form class="login-form">
+			<input type="text" placeholder="username" name="username" />
+			<input type="password" placeholder="password" name="password" />
+			<button>login</button>
+			<p class="message">Not registered? <a href="#">Create an account</a></p>
+		  </form>
 		</div>
 	</div>
-	<!-- Upload Form End -->
+	<!-- Login Form End -->
 	
 	<!-- JS for Header Start -->
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
@@ -84,72 +82,72 @@
 	</script>
 	<!-- JS for Header End -->
 
-		<!-- Choose Challenge Start -->
-		<div class="choose_challenge">
-			<h1>Challenges</h1>
-			<div class="row">
-				<div class="col">
-					<div class="card card-danger" onclick="location.href = 'index.html';" >
-						<p class="card-title">No Restriction</p>
-						<div class="card-data">
-							<div class="difficulty card-sub">
-								<i class="fas fa-bolt"></i>
-								<p class="data">Easy</p>
-							</div>
+	<!-- Choose Challenge Start -->
+	<div class="choose_challenge">
+		<h1>Challenges</h1>
+		<div class="row">
+			<div class="col">
+				<div class="card card-danger" onclick="location.href = 'index.php';" >
+					<p class="card-title">SQL Auth Bypass-1</p>
+					<div class="card-data">
+						<div class="difficulty card-sub">
+							<i class="fas fa-bolt"></i>
+							<p class="data">Easy</p>
 						</div>
 					</div>
 				</div>
-	
-				<div class="col">
-					<div class="card card-danger" onclick="location.href = 'challenge2.html';" >
-						<p class="card-title">Content Type</p>
-						<div class="card-data">
-							<div class="difficulty card-sub">
-								<i class="fas fa-bolt"></i>
-								<p class="data">Easy</p>
-							</div>
-						</div>
-					</div>
-				</div>	
-	
-				<div class="col">
-					<div class="card card-danger" onclick="location.href = 'challenge3.html';" >
-						<p class="card-title">Blacklist EXT Validation</p>
-						<div class="card-data">
-							<div class="difficulty card-sub">
-								<i class="fas fa-bolt"></i>
-								<p class="data">Medium</p>
-							</div>
-						</div>
-					</div>
-				</div>
-				
-				<div class="col">
-					<div class="card card-danger" onclick="location.href = 'challenge4.html';" >
-						<p class="card-title">Whitelist EXT Validation - 1</p>
-						<div class="card-data">
-							<div class="difficulty card-sub">
-								<i class="fas fa-bolt"></i>
-								<p class="data">Medium</p>
-							</div>
-						</div>
-					</div>
-				</div>	
-				
-				<div class="col">
-					<div class="card card-danger" onclick="location.href = 'challenge5.html';" >
-						<p class="card-title">Whitelist EXT Validation - 2</p>
-						<div class="card-data">
-							<div class="difficulty card-sub">
-								<i class="fas fa-bolt"></i>
-								<p class="data">Medium</p>
-							</div>
-						</div>
-					</div>
-				</div>			
 			</div>
+
+			<div class="col">
+				<div class="card card-danger" onclick="location.href = 'php/challenge2.php';" >
+					<p class="card-title">SQL Auth Bypass-2</p>
+					<div class="card-data">
+						<div class="difficulty card-sub">
+							<i class="fas fa-bolt"></i>
+							<p class="data">Easy</p>
+						</div>
+					</div>
+				</div>
+			</div>	
+
+			<div class="col">
+				<div class="card card-danger" onclick="location.href = 'php/challenge3.php';" >
+					<p class="card-title">SQL Auth Bypass-3</p>
+					<div class="card-data">
+						<div class="difficulty card-sub">
+							<i class="fas fa-bolt"></i>
+							<p class="data">Easy</p>
+						</div>
+					</div>
+				</div>
+			</div>
+			
+			<div class="col">
+				<div class="card card-danger" onclick="location.href = 'php/challenge4.php';" >
+					<p class="card-title">SQL Auth Bypass-4</p>
+					<div class="card-data">
+						<div class="difficulty card-sub">
+							<i class="fas fa-bolt"></i>
+							<p class="data">Easy</p>
+						</div>
+					</div>
+				</div>
+			</div>	
+			
+			<div class="col">
+				<div class="card card-danger" onclick="location.href = 'php/challenge5.php';" >
+					<p class="card-title">SQL Auth Bypass-5</p>
+					<div class="card-data">
+						<div class="difficulty card-sub">
+							<i class="fas fa-bolt"></i>
+							<p class="data">Easy</p>
+						</div>
+					</div>
+				</div>
+			</div>			
 		</div>
-		<!-- Choose Challenge End -->
+	</div>
+	<!-- Choose Challenge End -->
 
 	<!-- Footer Start -->
 	<footer>
