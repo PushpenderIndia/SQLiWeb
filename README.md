@@ -39,7 +39,7 @@ $dbpass  = "";
 ?>
 ```
 
-3. By Default `db_creds.php` will have MYSQL Username: `root` & Password: ``
+3. By Default `db_creds.php` will have MYSQL Username: `root` & Password: "" (No Password)
 4. Run this command to setup Database: `firefox http://127.0.0.1/sqli_challenges/php/db/setup.php &` or simply visit `http://127.0.0.1/sqli_challenges/php/db/setup.php` using web browser.
 5. After Setting up the website, it will redirect you to `http://127.0.0.1/sqli_challenges/index.php`
 6. Then whenever you want to start website, just run this command: 
