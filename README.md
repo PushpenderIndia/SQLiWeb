@@ -19,7 +19,7 @@ Website Containing Different Types of SQL Injection Vulnerabilities
 
 1. Copy & Paste the Command in your linux System
 ```
-sudo git clone https://github.com/PushpenderIndia/SQLiWeb && mv SQLiWeb /var/www/html &&  
+sudo git clone https://github.com/PushpenderIndia/SQLiWeb && sudo mv SQLiWeb /var/www/html 
 ```
 2. Update MySQL Credentials in `db-creds.inc` file, present in `/var/www/html/SQLiWeb`
 3. By Default `db-creds.inc` will have MYSQL Username: `root` & Password: `toor`
