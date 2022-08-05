@@ -1,6 +1,28 @@
 <?php 
 
-include 'php/db/connection.php';
+include 'db/connection.php';
+
+// Checking Secret Code
+if (isset($_GET["code"])) {
+	$sql = "select * from $secret_table where code_name = 'code_5'";
+	$result = $con->query($sql);
+	if ($result->num_rows > 0) {
+		while($row = $result->fetch_assoc()) {
+			$code = $row["code"];
+		}
+	}
+	
+	if ($code != $_GET["code"]) {
+		header("Location: ../index.php");
+		die();
+	}
+}
+
+else {
+	header("Location: ../index.php");
+	die();	
+}
+
 
 // Checking Whether POST Request or not
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
@@ -16,24 +38,24 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 		$username = $_POST["username"];
 		$password = $_POST["password"];
 		
-		$sql = "select * from users where username = '$username' and user_passwd = '$password'";  
+		$sql = "select * from users where username = (\"$username\") and user_passwd = (\"$password\")";  
         $result = mysqli_query($con, $sql);  
         $row = mysqli_fetch_array($result, MYSQLI_ASSOC);  
         $count = mysqli_num_rows($result);  
-          
-        if($count == 1){  
-			$sql = "select * from $secret_table where code_name = 'code_1'";
+
+        if($count == 1) {  
+			$sql = "select * from $secret_table where code_name = 'code_6'";
 			$result = $con->query($sql);
 			if ($result->num_rows > 0) {
         		while($row = $result->fetch_assoc()) {
 					$code = $row["code"];
 				}
 			}
-            echo "<script>alert('Login Successful! Please Save This Challenge Unlock Code: $code'); window.location.href = 'php/challenge2.php?code=$code';</script>";  
+            echo "<script>alert('Login Successful! More Challenges Coming soon!');</script>";  
         }  
         else {  
             echo "<script>alert('Login failed. Invalid username or password.')</script>";  
-        }     
+        }       
 	}
 }
 
@@ -44,10 +66,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 		<meta charset="utf-8">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
-		<title>SQL Auth Bypass-1</title>
+		<title>SQL Auth Bypass-6</title>
 		<!-- Header & Login form CSS -->
-		<link rel="stylesheet" href="static/css/style.css">
-		<link rel="stylesheet" href="static/css/login.css">
+		<link rel="stylesheet" href="../static/css/style.css">
+		<link rel="stylesheet" href="../static/css/login.css">
 		<link href='https://fonts.googleapis.com/css?family=Cookie' rel='stylesheet' type='text/css'>
 
 		<!-- Footer CSS -->
@@ -59,7 +81,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 	<!-- Header Start -->
 	<header class="brand-navigation">
 		<div class="content">
-		  <a href="https://www.youtube.com/channel/UCRv-wp0CWtW2J33NkTId62w"><img class="logo-nav" src="static/img/logo.png"></a>
+		  <a href="https://www.youtube.com/channel/UCRv-wp0CWtW2J33NkTId62w"><img class="logo-nav" src="../static/img/logo.png"></a>
 		  <nav>
 			<ul class="navigation">
 			  <li><a href="#">Home</a></li>
@@ -76,11 +98,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
 	<!-- Tip tool Start -->
 	<div class="tiptool">
-		<span class="tool" data-tip="Can You Bypass This Login Page. Hint: SQL Auth Bypass" tabindex="1"><b>💡 Hint </b></span>
+		<span class="tool" data-tip="It is necessary that .png/.jpg/.gif should be at the end of file ?" tabindex="1"><b>💡 Hint </b></span>
 	</div>
-	<!-- Tip tool End -->
+	<!-- Tip tool End -->	
 
-	<h2 style="text-align:center; padding-top: 20px; padding-bottom: 20px;">Challenge 1</h2>
+	<h2 style="text-align:center; padding-top: 20px; padding-bottom: 20px;">Challenge 6</h2>
 
 	<!-- Login Form Start -->
 	<div class="login-page">
@@ -104,7 +126,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 	
 	<!-- JS for Header Start -->
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
-	<script src="static/js/script.js"></script>
+	<script src="../static/js/script.js"></script>
 	<script>
 		$(document).ready(function(){
 			var showHeaderAt = 150;
@@ -130,7 +152,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 		<h1>Challenges</h1>
 		<div class="row">
 			<div class="col">
-				<div class="card card-danger" onclick="location.href = 'index.php';" >
+				<div class="card card-danger" onclick="location.href = '../index.php';" >
 					<p class="card-title">SQL Auth Bypass-1</p>
 					<div class="card-data">
 						<div class="difficulty card-sub">
@@ -142,7 +164,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 			</div>
 
 			<div class="col">
-				<div class="card card-danger" onclick="var code=prompt('Enter Challenge Code'); location.href = 'php/challenge2.php?code=$code';" >
+				<div class="card card-danger" onclick="var code=prompt('Enter Challenge Code'); location.href = 'challenge2.php?code=$code';" >
 					<p class="card-title">SQL Auth Bypass-2</p>
 					<div class="card-data">
 						<div class="difficulty card-sub">
@@ -154,7 +176,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 			</div>	
 
 			<div class="col">
-				<div class="card card-danger" onclick="var code=prompt('Enter Challenge Code'); location.href = 'php/challenge3.php?code=$code';" >
+				<div class="card card-danger" onclick="var code=prompt('Enter Challenge Code'); location.href = 'challenge3.php?code=$code';"  >
 					<p class="card-title">SQL Auth Bypass-3</p>
 					<div class="card-data">
 						<div class="difficulty card-sub">
@@ -166,7 +188,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 			</div>
 			
 			<div class="col">
-				<div class="card card-danger" onclick="var code=prompt('Enter Challenge Code'); location.href = 'php/challenge4.php?code=$code';" >
+				<div class="card card-danger" onclick="var code=prompt('Enter Challenge Code'); location.href = 'challenge4.php?code=$code';"  >
 					<p class="card-title">SQL Auth Bypass-4</p>
 					<div class="card-data">
 						<div class="difficulty card-sub">
@@ -178,7 +200,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 			</div>	
 			
 			<div class="col">
-				<div class="card card-danger" onclick="var code=prompt('Enter Challenge Code'); location.href = 'php/challenge5.php?code=$code';" >
+				<div class="card card-danger" onclick="var code=prompt('Enter Challenge Code'); location.href = 'challenge5.php?code=$code';"  >
 					<p class="card-title">SQL Auth Bypass-5</p>
 					<div class="card-data">
 						<div class="difficulty card-sub">
@@ -187,10 +209,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 						</div>
 					</div>
 				</div>
-			</div>	
-			
+			</div>			
+
 			<div class="col">
-				<div class="card card-danger" onclick="var code=prompt('Enter Challenge Code'); location.href = 'php/challenge6.php?code=$code';" >
+				<div class="card card-danger" onclick="var code=prompt('Enter Challenge Code'); location.href = 'challenge6.php?code=$code';" >
 					<p class="card-title">SQL Auth Bypass-6</p>
 					<div class="card-data">
 						<div class="difficulty card-sub">
@@ -199,7 +221,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 						</div>
 					</div>
 				</div>
-			</div>	
+			</div>		
 		</div>
 	</div>
 	<!-- Choose Challenge End -->

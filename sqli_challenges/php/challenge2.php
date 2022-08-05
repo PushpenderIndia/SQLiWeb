@@ -13,7 +13,7 @@ if (isset($_GET["code"])) {
 	}
 	
 	if ($code != $_GET["code"]) {
-		header("Location: /../index.php");
+		header("Location: ../index.php");
 		die();
 	}
 }
@@ -51,7 +51,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 					$code = $row["code"];
 				}
 			}
-            echo "<script>alert('Login Successful!'); window.location.href = 'challenge3.php?code=$code';</script>";  
+            echo "<script>alert('Login Successful! Please Save This Challenge Unlock Code: $code'); window.location.href = 'challenge3.php?code=$code';</script>";  
         }  
         else {  
             echo "<script>alert('Login failed. Invalid username or password.')</script>";  
@@ -98,7 +98,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
 	<!-- Tip tool Start -->
 	<div class="tiptool">
-		<span class="tool" data-tip="Content-Type HTTP Header can be tampered ; )" tabindex="1"><b>💡 Hint </b></span>
+		<span class="tool" data-tip='select * from users where username = "$username" and user_passwd = "$password"' tabindex="1"><b>💡 Hint </b></span>
 	</div>
 	<!-- Tip tool End -->	
 
@@ -147,8 +147,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 	</script>
 	<!-- JS for Header End -->
 
-	<!-- Choose Challenge Start -->
-	<div class="choose_challenge">
+		<!-- Choose Challenge Start -->
+		<div class="choose_challenge">
 		<h1>Challenges</h1>
 		<div class="row">
 			<div class="col">
@@ -164,7 +164,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 			</div>
 
 			<div class="col">
-				<div class="card card-danger" onclick="location.href = 'challenge2.php';" >
+				<div class="card card-danger" onclick="var code=prompt('Enter Challenge Code'); location.href = 'challenge2.php?code=$code';" >
 					<p class="card-title">SQL Auth Bypass-2</p>
 					<div class="card-data">
 						<div class="difficulty card-sub">
@@ -176,7 +176,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 			</div>	
 
 			<div class="col">
-				<div class="card card-danger" onclick="location.href = 'challenge3.php';" >
+				<div class="card card-danger" onclick="var code=prompt('Enter Challenge Code'); location.href = 'challenge3.php?code=$code';"  >
 					<p class="card-title">SQL Auth Bypass-3</p>
 					<div class="card-data">
 						<div class="difficulty card-sub">
@@ -188,7 +188,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 			</div>
 			
 			<div class="col">
-				<div class="card card-danger" onclick="location.href = 'challenge4.php';" >
+				<div class="card card-danger" onclick="var code=prompt('Enter Challenge Code'); location.href = 'challenge4.php?code=$code';"  >
 					<p class="card-title">SQL Auth Bypass-4</p>
 					<div class="card-data">
 						<div class="difficulty card-sub">
@@ -200,7 +200,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 			</div>	
 			
 			<div class="col">
-				<div class="card card-danger" onclick="location.href = 'challenge5.php';" >
+				<div class="card card-danger" onclick="var code=prompt('Enter Challenge Code'); location.href = 'challenge5.php?code=$code';"  >
 					<p class="card-title">SQL Auth Bypass-5</p>
 					<div class="card-data">
 						<div class="difficulty card-sub">
@@ -210,6 +210,18 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 					</div>
 				</div>
 			</div>			
+
+			<div class="col">
+				<div class="card card-danger" onclick="var code=prompt('Enter Challenge Code'); location.href = 'challenge6.php?code=$code';" >
+					<p class="card-title">SQL Auth Bypass-6</p>
+					<div class="card-data">
+						<div class="difficulty card-sub">
+							<i class="fas fa-bolt"></i>
+							<p class="data">Easy</p>
+						</div>
+					</div>
+				</div>
+			</div>		
 		</div>
 	</div>
 	<!-- Choose Challenge End -->

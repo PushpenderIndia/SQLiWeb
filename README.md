@@ -11,6 +11,7 @@ Website Containing Different Types of SQL Injection Vulnerabilities
 - [X] SQL Authentication Bypass - 3  
 - [X] SQL Authentication Bypass - 4  
 - [X] SQL Authentication Bypass - 5 
+- [X] SQL Authentication Bypass - 6
 - [ ] More labs comming soon
 
 ## Different Types of SQLi Vulnerabilities Covered
