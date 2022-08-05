@@ -1,6 +1,18 @@
 # SQLi Web
 Website Containing Different Types of SQL Injection Vulnerabilities
 
+## Lab Preview
+
+![](/Img/Preview.PNG)
+
+## Lab Challenges
+- [X] SQL Authentication Bypass - 1  
+- [X] SQL Authentication Bypass - 2  
+- [X] SQL Authentication Bypass - 3  
+- [X] SQL Authentication Bypass - 4  
+- [X] SQL Authentication Bypass - 5 
+- [ ] More labs comming soon
+
 ## Different Types of SQLi Vulnerabilities Covered
 - Error Based
 - Union Based
@@ -46,18 +58,6 @@ $dbpass  = "";
 ```
 sudo service apache2 start && sudo service mysql start && firefox http://127.0.0.1/sqli_challenges/index.php &
 ```
-
-## Lab Challenges
-- [X] SQL Authentication Bypass - 1  
-- [X] SQL Authentication Bypass - 2  
-- [X] SQL Authentication Bypass - 3  
-- [X] SQL Authentication Bypass - 4  
-- [X] SQL Authentication Bypass - 5 
-- [ ] More labs comming soon
-
-## Lab Preview
-
-![](/Img/Preview.PNG)
 
 ## Writeups
 - [User-Agent Header Based - Blind SQLi in Sony: SQLi To RCE](https://hackerone.com/reports/1339430)
