@@ -147,8 +147,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 	</script>
 	<!-- JS for Header End -->
 
-		<!-- Choose Challenge Start -->
-		<div class="choose_challenge">
+	<!-- Choose Challenge Start -->
+	<div class="choose_challenge">
 		<h1>Challenges</h1>
 		<div class="row">
 			<div class="col">
