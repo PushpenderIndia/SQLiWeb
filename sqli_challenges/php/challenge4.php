@@ -1,3 +1,66 @@
+<?php 
+
+include 'db/connection.php';
+
+// Checking Secret Code
+if (isset($_GET["code"])) {
+	$sql = "select * from $secret_table where code_name = 'code_3'";
+	$result = $con->query($sql);
+	if ($result->num_rows > 0) {
+		while($row = $result->fetch_assoc()) {
+			$code = $row["code"];
+		}
+	}
+	
+	if ($code != $_GET["code"]) {
+		header("Location: /../index.php");
+		die();
+	}
+}
+
+else {
+	header("Location: ../index.php");
+	die();	
+}
+
+
+// Checking Whether POST Request or not
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+	if (isset($_POST["email_address"])) {
+		// Register Request
+		$username = $_POST["username"];
+		$password = $_POST["password"];
+		$email_address = $_POST["email_address"];
+	}
+	
+	else {
+		// Login Request
+		$username = $_POST["username"];
+		$password = $_POST["password"];
+		
+		$sql = "select * from users where (username = '$username') and (user_passwd = '$password')";  
+        $result = mysqli_query($con, $sql);  
+        $row = mysqli_fetch_array($result, MYSQLI_ASSOC);  
+        $count = mysqli_num_rows($result);  
+
+        if($count == 1) {  
+			$sql = "select * from $secret_table where code_name = 'code_4'";
+			$result = $con->query($sql);
+			if ($result->num_rows > 0) {
+        		while($row = $result->fetch_assoc()) {
+					$code = $row["code"];
+				}
+			}
+            echo "<script>alert('Login Successful!'); window.location.href = 'challenge5.php?code=$code';</script>";  
+        }  
+        else {  
+            echo "<script>alert('Login failed. Invalid username or password.')</script>";  
+        }       
+	}
+}
+
+?>
+
 <html>
 	<head>
 		<meta charset="utf-8">
@@ -39,19 +102,21 @@
 	</div>
 	<!-- Tip tool End -->	
 
+	<h2 style="text-align:center; padding-top: 20px;">Challenge 4</h2>
+
 	<!-- Login Form Start -->
 	<div class="login-page">
 		<div class="form">
-		  <form class="register-form">
-			<input type="text" placeholder="name"/>
-			<input type="password" placeholder="password"/>
-			<input type="text" placeholder="email address"/>
+		  <form class="register-form" method="post">
+			<input type="text" placeholder="name" name="username" />
+			<input type="password" placeholder="password" name="password" />
+			<input type="text" placeholder="email address" name="email_address" />
 			<button>create</button>
 			<p class="message">Already registered? <a href="#">Sign In</a></p>
 		  </form>
-		  <form class="login-form">
-			<input type="text" placeholder="username"/>
-			<input type="password" placeholder="password"/>
+		  <form class="login-form" method="post">
+			<input type="text" placeholder="username" name="username" />
+			<input type="password" placeholder="password" name="password" />
 			<button>login</button>
 			<p class="message">Not registered? <a href="#">Create an account</a></p>
 		  </form>

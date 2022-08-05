@@ -10,6 +10,7 @@ $host    = "localhost";
 $admin_username = "Admin";
 $admin_password = "VeryStrong@Password";
 $admin_email    = "admin@admin.com";
-$user_table     = "users";    
+$user_table     = "users"; 
+$secret_table   = "secret_codes";   
 
 ?>

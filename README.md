@@ -25,7 +25,7 @@ sudo git clone https://github.com/PushpenderIndia/SQLiWeb && sudo mv SQLiWeb/sql
 > If you have changed the MYSQL Credentials, You will get error in your browser, after running above command
 > Follow below instructions for updating mysql creds
 
-2. Update MySQL Credentials in `db_creds.php` file, present in `/var/www/html/sqli_challenges/php/db/`
+2. Update MySQL Credentials in `db_config.php` file, present in `/var/www/html/sqli_challenges/php/db/`
 ```
 <?php
 
