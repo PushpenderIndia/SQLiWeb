@@ -55,6 +55,10 @@ sudo service apache2 start && sudo service mysql start && firefox http://127.0.0
 - [X] SQL Authentication Bypass - 5 
 - [ ] More labs comming soon
 
+## Lab Preview
+
+![](/Img/Preview.PNG)
+
 ## Writeups
 - [User-Agent Header Based - Blind SQLi in Sony: SQLi To RCE](https://hackerone.com/reports/1339430)
 

@@ -102,7 +102,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 	</div>
 	<!-- Tip tool End -->	
 
-	<h2 style="text-align:center; padding-top: 20px;">Challenge 5</h2>
+	<h2 style="text-align:center; padding-top: 20px; padding-bottom: 20px;">Challenge 5</h2>
 
 	<!-- Login Form Start -->
 	<div class="login-page">
