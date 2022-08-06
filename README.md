@@ -30,7 +30,13 @@ Website Containing Different Types of SQL Injection Vulnerabilities
 
 ## Lab Setup Instructions
 
-1. Copy & Paste the Command in your linux System
+1. Type `sudo mysql -u root` 
+2. Enter this command mysql shell: `grant all privileges on *.* to root@localhost identified by '' with grant option;`
+3. Type `\q` or `quit` to exit mysql shell
+
+![](Img/Setup1.PNG)
+
+4. Copy & Paste the Command in your linux System
 ```
 sudo git clone https://github.com/PushpenderIndia/SQLiWeb && sudo mv SQLiWeb/sqli_challenges /var/www/html && sudo rm -r SQLiWeb && sudo service apache2 start && sudo service mysql start && firefox http://127.0.0.1/sqli_challenges/php/db/setup.php &
 ```
@@ -38,7 +44,7 @@ sudo git clone https://github.com/PushpenderIndia/SQLiWeb && sudo mv SQLiWeb/sql
 > If you have changed the MYSQL Credentials, You will get error in your browser, after running above command
 > Follow below instructions for updating mysql creds
 
-2. Update MySQL Credentials in `db_config.php` file, present in `/var/www/html/sqli_challenges/php/db/`
+5. Update MySQL Credentials in `db_config.php` file, present in `/var/www/html/sqli_challenges/php/db/`
 ```
 <?php
 
@@ -52,10 +58,10 @@ $dbpass  = "";
 ?>
 ```
 
-3. By Default `db_creds.php` will have MYSQL Username: `root` & Password: "" (No Password)
-4. Run this command to setup Database: `firefox http://127.0.0.1/sqli_challenges/php/db/setup.php &` or simply visit `http://127.0.0.1/sqli_challenges/php/db/setup.php` using web browser.
-5. After Setting up the website, it will redirect you to `http://127.0.0.1/sqli_challenges/index.php`
-6. Then whenever you want to start website, just run this command: 
+6. By Default `db_creds.php` will have MYSQL Username: `root` & Password: "" (No Password)
+7. Run this command to setup Database: `firefox http://127.0.0.1/sqli_challenges/php/db/setup.php &` or simply visit `http://127.0.0.1/sqli_challenges/php/db/setup.php` using web browser.
+8. After Setting up the website, it will redirect you to `http://127.0.0.1/sqli_challenges/index.php`
+9. Then whenever you want to start website, just run this command: 
 ```
 sudo service apache2 start && sudo service mysql start && firefox http://127.0.0.1/sqli_challenges/index.php &
 ```
