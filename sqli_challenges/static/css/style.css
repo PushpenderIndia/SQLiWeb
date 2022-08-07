@@ -201,6 +201,7 @@
 
 /* Choose Challenge CSS */ 
 .choose_challenge {
+  padding-top: 30px;
   padding-left: 50px;
   padding-right: 50px;
   padding-bottom: 50px;
@@ -248,7 +249,7 @@
 }
 
 span {
-   color: #e91e63;
+   /* color: #e91e63; */
    font-family: monospace;
    white-space: nowrap;
 }

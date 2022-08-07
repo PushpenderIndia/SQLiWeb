@@ -58,7 +58,7 @@ else {
     $code13 = substr(str_shuffle($str_result), 0, 32);
 
     $codes_list = array($code1, $code2, $code3, $code4, $code5, $code6, $code7, $code8, $code9, $code10, $code11, $code12, $code13);
-    $index = 1;
+    $index = 2;
     foreach ($codes_list as $code_value) {
         $sql = "INSERT INTO $dbname.$secret_table VALUES ('code_$index', '$code_value')";
         if (mysqli_query($con, $sql)) {echo "- Secret Code: code_$index inserted in $user_table<br>";}

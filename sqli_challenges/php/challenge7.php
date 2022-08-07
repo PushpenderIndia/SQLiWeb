@@ -4,7 +4,7 @@ include 'db/connection.php';
 
 // Checking Secret Code
 if (isset($_GET["code"])) {
-	$sql = "select * from $secret_table where code_name = 'code_4'";
+	$sql = "select * from $secret_table where code_name = 'code_7'";
 	$result = $con->query($sql);
 	if ($result->num_rows > 0) {
 		while($row = $result->fetch_assoc()) {
@@ -38,20 +38,20 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 		$username = $_POST["username"];
 		$password = $_POST["password"];
 		
-		$sql = "select * from users where username = ('$username') and user_passwd = ('$password') LIMIT 0,1";  
+		$sql = "select * from users where username = (('$username')) and user_passwd = (('$password')) LIMIT 0,1";  
         $result = mysqli_query($con, $sql);  
         $row = mysqli_fetch_array($result, MYSQLI_ASSOC);  
         $count = mysqli_num_rows($result);  
 
         if($count == 1) {  
-			$sql = "select * from $secret_table where code_name = 'code_5'";
+			$sql = "select * from $secret_table where code_name = 'code_8'";
 			$result = $con->query($sql);
 			if ($result->num_rows > 0) {
         		while($row = $result->fetch_assoc()) {
 					$code = $row["code"];
 				}
 			}
-            echo "<script>alert('Login Successful! Please Save This Challenge Unlock Code: $code'); window.location.href = 'challenge5.php?code=$code';</script>";  
+            echo "<script>alert('Login Successful! Please Save This Challenge Unlock Code: $code'); window.location.href = 'challenge8.php?code=$code';</script>";   
         }  
         else {  
             echo "<script>alert('Login failed. Invalid username or password.')</script>";  
@@ -66,7 +66,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 		<meta charset="utf-8">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
-		<title>SQL Auth Bypass-4</title>
+		<title>SQL Auth Bypass-7</title>
 		<!-- Header & Login form CSS -->
 		<link rel="stylesheet" href="../static/css/style.css">
 		<link rel="stylesheet" href="../static/css/login.css">
@@ -98,11 +98,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
 	<!-- Tip tool Start -->
 	<div class="tiptool">
-		<span class="tool" data-tip="select * from users where username = ('$username') and user_passwd = ('$password')" tabindex="1"><b>💡 Hint </b></span>
+		<span class="tool" data-tip="select * from users where username = (('$username')) and user_passwd = (('$password'))" tabindex="1"><b>💡 Hint </b></span>
 	</div>
 	<!-- Tip tool End -->	
 
-	<h2 style="text-align:center; padding-top: 20px; padding-bottom: 20px;">Challenge 4</h2>
+	<h2 style="text-align:center; padding-top: 20px; padding-bottom: 20px;">Challenge 7</h2>
 
 	<!-- Login Form Start -->
 	<div class="login-page">
@@ -221,7 +221,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 						</div>
 					</div>
 				</div>
-			</div>	
+			</div>
 			
 			<div class="col">
 				<div class="card card-danger" onclick="var code=prompt('Enter Challenge Code');  if (code != null){ location.href = 'challenge7.php?code='+code};" >

@@ -16,13 +16,13 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 		$username = $_POST["username"];
 		$password = $_POST["password"];
 		
-		$sql = "select * from users where username = '$username' and user_passwd = '$password'";  
+		$sql = "select * from users where username = '$username' and user_passwd = '$password' LIMIT 0,1";  
         $result = mysqli_query($con, $sql);  
         $row = mysqli_fetch_array($result, MYSQLI_ASSOC);  
         $count = mysqli_num_rows($result);  
           
         if($count == 1){  
-			$sql = "select * from $secret_table where code_name = 'code_1'";
+			$sql = "select * from $secret_table where code_name = 'code_2'";
 			$result = $con->query($sql);
 			if ($result->num_rows > 0) {
         		while($row = $result->fetch_assoc()) {
@@ -142,7 +142,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 			</div>
 
 			<div class="col">
-				<div class="card card-danger" onclick="var code=prompt('Enter Challenge Code'); location.href = 'php/challenge2.php?code=$code';" >
+				<div class="card card-danger" onclick="var code=prompt('Enter Challenge Code'); if (code != null){ location.href = 'php/challenge2.php?code='+code} ;" >
 					<p class="card-title">SQL Auth Bypass-2</p>
 					<div class="card-data">
 						<div class="difficulty card-sub">
@@ -154,7 +154,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 			</div>	
 
 			<div class="col">
-				<div class="card card-danger" onclick="var code=prompt('Enter Challenge Code'); location.href = 'php/challenge3.php?code=$code';" >
+				<div class="card card-danger" onclick="var code=prompt('Enter Challenge Code'); if (code != null){ location.href = 'php/challenge3.php?code='+code};" >
 					<p class="card-title">SQL Auth Bypass-3</p>
 					<div class="card-data">
 						<div class="difficulty card-sub">
@@ -166,7 +166,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 			</div>
 			
 			<div class="col">
-				<div class="card card-danger" onclick="var code=prompt('Enter Challenge Code'); location.href = 'php/challenge4.php?code=$code';" >
+				<div class="card card-danger" onclick="var code=prompt('Enter Challenge Code'); if (code != null){ location.href = 'php/challenge4.php?code='+code};" >
 					<p class="card-title">SQL Auth Bypass-4</p>
 					<div class="card-data">
 						<div class="difficulty card-sub">
@@ -178,7 +178,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 			</div>	
 			
 			<div class="col">
-				<div class="card card-danger" onclick="var code=prompt('Enter Challenge Code'); location.href = 'php/challenge5.php?code=$code';" >
+				<div class="card card-danger" onclick="var code=prompt('Enter Challenge Code'); if (code != null){ location.href = 'php/challenge5.php?code='+code};" >
 					<p class="card-title">SQL Auth Bypass-5</p>
 					<div class="card-data">
 						<div class="difficulty card-sub">
@@ -190,7 +190,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 			</div>	
 			
 			<div class="col">
-				<div class="card card-danger" onclick="var code=prompt('Enter Challenge Code'); location.href = 'php/challenge6.php?code=$code';" >
+				<div class="card card-danger" onclick="var code=prompt('Enter Challenge Code'); if (code != null){ location.href = 'php/challenge6.php?code='+code};" >
 					<p class="card-title">SQL Auth Bypass-6</p>
 					<div class="card-data">
 						<div class="difficulty card-sub">
@@ -200,6 +200,30 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 					</div>
 				</div>
 			</div>	
+
+			<div class="col">
+				<div class="card card-danger" onclick="var code=prompt('Enter Challenge Code'); if (code != null){ location.href = 'php/challenge7.php?code='+code};" >
+					<p class="card-title">SQL Auth Bypass-7</p>
+					<div class="card-data">
+						<div class="difficulty card-sub">
+							<i class="fas fa-bolt"></i>
+							<p class="data">Easy</p>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="col">
+				<div class="card card-danger" onclick="var code=prompt('Enter Challenge Code'); if (code != null){ location.href = 'php/challenge8.php?code='+code};" >
+					<p class="card-title">SQL Auth Bypass-8</p>
+					<div class="card-data">
+						<div class="difficulty card-sub">
+							<i class="fas fa-bolt"></i>
+							<p class="data">Easy</p>
+						</div>
+					</div>
+				</div>
+			</div>
 		</div>
 	</div>
 	<!-- Choose Challenge End -->
