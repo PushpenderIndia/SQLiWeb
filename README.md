@@ -48,7 +48,7 @@ Website Containing Different Types of SQL Injection Vulnerabilities
 
 4. Copy & Paste the Command in your linux System
 ```
-sudo rm -r SQLiWeb && sudo rm -r /var/www/html/sqli_challenges && sudo git clone https://github.com/PushpenderIndia/SQLiWeb && sudo mv SQLiWeb/sqli_challenges /var/www/html && sudo rm -r SQLiWeb && sudo service apache2 start && sudo service mysql start && firefox http://127.0.0.1/sqli_challenges/php/db/setup.php &
+sudo git clone https://github.com/PushpenderIndia/SQLiWeb && sudo mv SQLiWeb/sqli_challenges /var/www/html && sudo rm -r SQLiWeb && sudo service apache2 start && sudo service mysql start && firefox http://127.0.0.1/sqli_challenges/php/db/setup.php &
 ```
 
 > If you have changed the MYSQL Credentials, You will get error in your browser, after running above command
